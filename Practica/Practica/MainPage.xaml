@@ -9,6 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Image Stretch="Fill" Source="Assets/FondoMenu.png"/>
+        <Image Width="500" Source="Assets/TablaMadera.jpg" VerticalAlignment="Top" Margin="150" />
     </Grid>
+    
+
 </Page>
