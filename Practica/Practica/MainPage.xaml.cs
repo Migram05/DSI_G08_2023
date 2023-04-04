@@ -26,5 +26,6 @@ namespace Practica
         {
             this.InitializeComponent();
         }
+
     }
 }

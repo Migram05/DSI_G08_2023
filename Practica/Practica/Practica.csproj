@@ -151,13 +151,16 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\cofre.png" />
     <Content Include="Assets\Cuerda.png" />
     <Content Include="Assets\FondoMenu.png" />
     <Content Include="Assets\FondoTienda.jpg" />
     <Content Include="Assets\Graves.jpg" />
     <Content Include="Assets\Mapa.jpg" />
     <Content Include="Assets\MonedaPirata.png" />
+    <Content Include="Assets\multijugador.png" />
     <Content Include="Assets\TablaMadera.jpg" />
+    <Content Include="Assets\unJugador.png" />
     <Content Include="Assets\VolverMenu.PNG" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

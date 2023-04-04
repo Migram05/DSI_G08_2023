@@ -9,9 +9,37 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Image Stretch="Fill" Source="Assets/FondoMenu.png"/>
-        <Image Width="500" Source="Assets/TablaMadera.jpg" VerticalAlignment="Top" Margin="150" />
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/FondoMenu.png"></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" Grid.Row="1" Grid.Column="1"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <TextBlock Text="PIRATAS DEL MEDITERRÁNEO" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+            <TextBlock Text="NAVEGANDO NAVEGANDO TRIUNFÉ SAQUEANDO" FontSize="20" HorizontalTextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Bottom" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Image Source="/Assets/unJugador.png"  Height="203" Opacity="0.75" />
+            <Button Content="UN JUGADOR" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Image Source="/Assets/multijugador.png" Height="203" Opacity="0.75" />
+            <Button Content="MULTIJUGADOR"  Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" />
+        </StackPanel>
+        <Button Content="TIENDA" Margin="0,792,0,0" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" Grid.Column="1" HorizontalAlignment="Center"/>
+        <Image Source="/Assets/cofre.png" VerticalAlignment="Top" HorizontalAlignment="Center" Height="203" Grid.Column ="1" Margin="0,573,0,0"/>
     </Grid>
-    
+
 
 </Page>
