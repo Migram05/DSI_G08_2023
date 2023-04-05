@@ -31,7 +31,10 @@ namespace Practica
         //Navegación a páginas
         private void ImagenMenuPrincipal(object sender, TappedRoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
         }
 
         private void BotonAjustesSociales_Click(object sender, RoutedEventArgs e)
@@ -53,6 +56,7 @@ namespace Practica
             //Referencia a la aplicación
             var app = (App)Application.Current;
             app.setVolume(0); //Llamada al método
+            MusicSlider.Value = 0;
         }
 
         private void MusicSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)

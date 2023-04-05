@@ -156,6 +156,7 @@
     <Content Include="Assets\Cuerda.png" />
     <Content Include="Assets\FondoMenu.png" />
     <Content Include="Assets\FondoTienda.jpg" />
+    <Content Include="Assets\fondoUnJugador.jpg" />
     <Content Include="Assets\fotoPerfil.png" />
     <Content Include="Assets\GameMusic.mp3" />
     <Content Include="Assets\Graves.jpg" />

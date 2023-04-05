@@ -9,6 +9,24 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/fondoUnJugador.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="Ajustes" Source="/Assets/ajustes.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="0" Width="63" Tapped="Ajustes_Tapped"/>
+        <Image x:Name="RetornoMenu" Source="/Assets/VolverMenuSinFondo.png" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="2" Width="63" Tapped="RetornoMenu_Tapped"/>
+        <Image x:Name="Mapa" Source="/Assets/Mapa.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Grid.Column ="1" Grid.Row="1"/>
+        <TextBlock Text="UN JUGADOR" FontWeight="Black" FontSize="80" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
     </Grid>
 </Page>

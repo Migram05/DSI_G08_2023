@@ -26,5 +26,15 @@ namespace Practica
         {
             this.InitializeComponent();
         }
+        //Navegación entre páginas
+        private void RetornoMenu_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void Ajustes_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
     }
 }
