@@ -46,7 +46,7 @@
             </Image>
         </StackPanel>
         <TextBlock Grid.Column="1" Text="Estructuras" FontSize="50" HorizontalAlignment="Center" Margin="0,116,0,812" FontWeight="Bold" Foreground="Black"/>
-        <Button Grid.Column="1" VerticalAlignment="Stretch" Margin="192,858,192,0" HorizontalAlignment="Stretch">
+        <Button Grid.Column="1" VerticalAlignment="Stretch" Margin="192,858,192,0" HorizontalAlignment="Stretch" Click="Menu_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="Assets/VolverMenu.PNG"/>

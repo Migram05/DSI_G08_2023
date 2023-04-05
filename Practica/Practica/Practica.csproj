@@ -160,6 +160,7 @@
     <Content Include="Assets\fotoPerfil.png" />
     <Content Include="Assets\GameMusic.mp3" />
     <Content Include="Assets\Graves.jpg" />
+    <Content Include="Assets\hero.png" />
     <Content Include="Assets\Mapa.jpg" />
     <Content Include="Assets\MonedaPirata.png" />
     <Content Include="Assets\multijugador.png" />
@@ -171,6 +172,7 @@
     <Content Include="Assets\unJugador.png" />
     <Content Include="Assets\VolverMenu.PNG" />
     <Content Include="Assets\VolverMenuSinFondo.png" />
+    <Content Include="Assets\woodTable.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

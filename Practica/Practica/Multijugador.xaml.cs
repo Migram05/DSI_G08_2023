@@ -26,5 +26,25 @@ namespace Practica
         {
             this.InitializeComponent();
         }
+
+        private void Tienda_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Tienda));
+        }
+
+        private void Heroe_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Menu_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void Ajustes_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Ajustes));
+        }
     }
 }

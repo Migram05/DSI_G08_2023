@@ -27,5 +27,13 @@ namespace Practica
         {
             this.InitializeComponent();
         }
+
+        private void Menu_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+                Frame.GoBack();
+            else
+                Frame.Navigate(typeof(MainPage));
+        }
     }
 }
