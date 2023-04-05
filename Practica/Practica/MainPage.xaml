@@ -23,22 +23,27 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
+
+        <Image Source="Assets/Cuerda.png" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+        <Image Source="Assets/Cuerda.png" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
         <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" Grid.Row="1" Grid.Column="1"/>
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
             <TextBlock Text="PIRATAS DEL MEDITERRÁNEO" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
             <TextBlock Text="NAVEGANDO NAVEGANDO TRIUNFÉ SAQUEANDO" FontSize="20" HorizontalTextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Bottom" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" HorizontalAlignment="Stretch"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Image Source="/Assets/unJugador.png"  Height="203" Opacity="0.75" />
-            <Button Content="UN JUGADOR" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black"/>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+            <Image Source="/Assets/unJugador.png"  Height="203" Opacity="0.75" Tapped="ImagenUnJugador"/>
+            <Button Content="UN JUGADOR" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Click="BotonUnJugador"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Image Source="/Assets/multijugador.png" Height="203" Opacity="0.75" />
-            <Button Content="MULTIJUGADOR"  Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" />
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+            <Image Source="/Assets/multijugador.png" Height="203" Opacity="0.75" Tapped="ImagenMultijugador"/>
+            <Button Content="MULTIJUGADOR"  Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Click="BotonMultijugador"/>
         </StackPanel>
-        <Button Content="TIENDA" Margin="0,792,0,0" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" Grid.Column="1" HorizontalAlignment="Center"/>
-        <Image Source="/Assets/cofre.png" VerticalAlignment="Top" HorizontalAlignment="Center" Height="203" Grid.Column ="1" Margin="0,573,0,0"/>
+        <Button Content="TIENDA" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Click="BotonTienda"/>
+        <Image Source="/Assets/cofre.png" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="203" Grid.Column ="1" Grid.Row="2" Tapped="ImagenTiendaPulsada"/>
+        <Image Source="/Assets/ajustes.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="0" Width="63" Grid.RowSpan="2" Tapped="ImagenAjustes"/>
+        
     </Grid>
 
 

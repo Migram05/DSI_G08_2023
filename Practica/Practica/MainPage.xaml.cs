@@ -27,5 +27,36 @@ namespace Practica
             this.InitializeComponent();
         }
 
+        //Fucionalidad de los botones e imágenes interactivas
+        private void ImagenAjustes(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Ajustes));
+        }
+
+        private void ImagenTiendaPulsada(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Tienda));
+        }
+
+        private void BotonTienda(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Tienda));
+        }
+        private void ImagenMultijugador(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Multijugador));
+        }
+        private void ImagenUnJugador(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(UnJugador));
+        }
+        private void BotonMultijugador(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Multijugador));
+        }
+        private void BotonUnJugador(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(UnJugador));
+        }
     }
 }
