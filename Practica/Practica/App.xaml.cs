@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Core;
+using Windows.Media.Playback;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,10 +30,12 @@ namespace Practica
         /// Inicializa el objeto de aplicación Singleton. Esta es la primera línea de código creado
         /// ejecutado y, como tal, es el equivalente lógico de main() o WinMain().
         /// </summary>
+        private MediaPlayer BackgroundMediaPlayer;
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            
         }
 
         /// <summary>
@@ -37,9 +43,27 @@ namespace Practica
         /// de entrada cuando la aplicación se inicie para abrir un archivo específico, por ejemplo.
         /// </summary>
         /// <param name="e">Información detallada acerca de la solicitud y el proceso de inicio.</param>
+        private async Task PlayBackgroundMusicAsync()
+        {
+            // Carga el archivo de audio
+            StorageFile audioFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/GameMusic.mp3"));
+            BackgroundMediaPlayer.Source = MediaSource.CreateFromStorageFile(audioFile);
+
+            // Reproduce la música en bucle
+            BackgroundMediaPlayer.IsLoopingEnabled = true;
+            BackgroundMediaPlayer.Play();
+        }
+        //Ajuste de volumen
+        public void setVolume(float value)
+        {
+            BackgroundMediaPlayer.Volume = value;
+        }
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
+
+            // Crea la instancia de MediaPlayer
+            BackgroundMediaPlayer = new MediaPlayer();
 
             // No repetir la inicialización de la aplicación si la ventana tiene contenido todavía,
             // solo asegurarse de que la ventana está activa.
@@ -58,6 +82,11 @@ namespace Practica
                 // Poner el marco en la ventana actual.
                 Window.Current.Content = rootFrame;
             }
+            // Reproduce la música en segundo plano de forma asincrónica
+            Task.Run(async () =>
+            {
+                await PlayBackgroundMusicAsync();
+            }).Wait();
 
             if (e.PrelaunchActivated == false)
             {

@@ -40,8 +40,8 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="/Assets/mute.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="56" Width="63"/>
-                <Slider Grid.Column="1" HorizontalAlignment="Stretch" Width="auto" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Margin="10,0" Value="100">
+                <Image x:Name="MusicMuteImage" Source="/Assets/mute.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="56" Width="63" Tapped="MusicMuteImage_Tapped"/>
+                <Slider x:Name="MusicSlider" Grid.Column="1" HorizontalAlignment="Stretch" Width="auto" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Margin="10,0" Value="100" ValueChanged="MusicSlider_ValueChanged">
                     <Slider.RenderTransform>
                         <CompositeTransform ScaleY="2"/>
                     </Slider.RenderTransform>

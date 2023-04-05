@@ -47,6 +47,19 @@ namespace Practica
             // Cambiar el idioma de la aplicación a través del objeto ApplicationLanguages
             ApplicationLanguages.PrimaryLanguageOverride = selectedLanguage;
         }
+        //Muteo del sonido
+        private void MusicMuteImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            //Referencia a la aplicación
+            var app = (App)Application.Current;
+            app.setVolume(0); //Llamada al método
+        }
 
+        private void MusicSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            //Referencia a la aplicación
+            var app = (App)Application.Current;
+            app.setVolume((float)MusicSlider.Value/100); //Llamada al método
+        }
     }
 }
