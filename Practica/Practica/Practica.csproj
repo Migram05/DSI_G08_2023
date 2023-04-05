@@ -160,9 +160,11 @@
     <Content Include="Assets\Mapa.jpg" />
     <Content Include="Assets\MonedaPirata.png" />
     <Content Include="Assets\multijugador.png" />
+    <Content Include="Assets\mute.png" />
     <Content Include="Assets\TablaMadera.jpg" />
     <Content Include="Assets\unJugador.png" />
     <Content Include="Assets\VolverMenu.PNG" />
+    <Content Include="Assets\VolverMenuSinFondo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

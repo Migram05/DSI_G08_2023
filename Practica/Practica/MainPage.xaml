@@ -28,7 +28,7 @@
         <Image Source="Assets/Cuerda.png" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
         <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" Grid.Row="1" Grid.Column="1"/>
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
-            <TextBlock Text="PIRATAS DEL MEDITERRÁNEO" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+            <TextBlock Text="PIRATAS DEL MEDITERRÁNEO" FontWeight="Black" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
             <TextBlock Text="NAVEGANDO NAVEGANDO TRIUNFÉ SAQUEANDO" FontSize="20" HorizontalTextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Bottom" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" HorizontalAlignment="Stretch"/>
         </StackPanel>
 
@@ -43,8 +43,6 @@
         <Button Content="TIENDA" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Click="BotonTienda"/>
         <Image Source="/Assets/cofre.png" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="203" Grid.Column ="1" Grid.Row="2" Tapped="ImagenTiendaPulsada"/>
         <Image Source="/Assets/ajustes.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="0" Width="63" Grid.RowSpan="2" Tapped="ImagenAjustes"/>
-        
+
     </Grid>
-
-
 </Page>
