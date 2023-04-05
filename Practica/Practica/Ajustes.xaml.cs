@@ -31,6 +31,7 @@ namespace Practica
         //Navegación a páginas
         private void ImagenMenuPrincipal(object sender, TappedRoutedEventArgs e)
         {
+            //Regresa a la página de donde se entró a la tienda
             if (Frame.CanGoBack)
             {
                 Frame.GoBack();

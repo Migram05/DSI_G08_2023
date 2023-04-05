@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -34,7 +35,46 @@ namespace Practica
 
         private void Ajustes_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            Frame.Navigate(typeof(Ajustes));
+        }
 
+        private void ImagenTienda_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Tienda));
+        }
+
+        private void BotonTienda_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Tienda));
+        }
+
+        private void BotonInfinito_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Partida));
+        }
+
+        private void BotonJugar_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Partida));
+        }
+
+        public ObservableCollection<string> Images { get; set; } //Las imágenes de los héroes que se muestran
+        = new ObservableCollection<string>
+          {
+              "ms-appx:///Assets/Graves.jpg",
+              "ms-appx:///Assets/Graves.jpg",
+              "ms-appx:///Assets/Graves.jpg",
+              "ms-appx:///Assets/Graves.jpg",
+              "ms-appx:///Assets/Graves.jpg",
+              "ms-appx:///Assets/Graves.jpg"
+          };
+
+        private void ImagenHeroe_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            //Ajusta la visibilidad del desplegables de héroes
+            Visibility estado = DesplegableHeroe.Visibility;
+            if (estado == Visibility.Visible) DesplegableHeroe.Visibility = Visibility.Collapsed;
+            else DesplegableHeroe.Visibility = Visibility.Visible;
         }
     }
 }
