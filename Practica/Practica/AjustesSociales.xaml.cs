@@ -26,5 +26,26 @@ namespace Practica
         {
             this.InitializeComponent();
         }
+        //Navegación entre páginas
+        private void ImagenMenuPrincipal(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void Silenciar_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Silenciar.Visibility = Visibility.Collapsed;
+            Notificaciones.Visibility = Visibility.Visible;
+        }
+
+        private void Notificaciones_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Notificaciones.Visibility = Visibility.Collapsed;
+            Silenciar.Visibility = Visibility.Visible;
+        }
+        private void Retroceso_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Ajustes));
+        }
     }
 }

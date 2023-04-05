@@ -9,6 +9,47 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/FondoMenu.png">
+            </ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
 
+        <Image Source="/Assets/VolverMenuSinFondo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="0" Width="63" Grid.RowSpan="2" Tapped="ImagenMenuPrincipal"/>
+        <Image Source="Assets/Cuerda.png" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image Source="Assets/Cuerda.png" Grid.RowSpan="2" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="40" VerticalAlignment="Stretch">
+            <TextBlock Text="AJUSTES SOCIALES" FontSize="50" FontWeight="Black" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="auto"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="FotoPerfil" Source="/Assets/fotoPerfil.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.RowSpan="2"/>
+                <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="70" TextWrapping="Wrap" Text="NOMBRE" TextAlignment="Start" VerticalAlignment="Center" Margin="10,0"/>
+                <Image x:Name="Silenciar" Source="/Assets/silenciarNotificaciones.png" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="2" Grid.RowSpan="2" Tapped="Silenciar_Tapped"/>
+                <Image x:Name="Notificaciones" Source="/Assets/notificaciones.png" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="2" Grid.RowSpan="2" Visibility="Collapsed" Tapped="Notificaciones_Tapped"/>
+                <TextBlock Text="ONLINE" FontSize="20" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Height="Auto" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Stretch" Width="auto" Foreground="#FF3FFF0B" FontFamily="Bernard MT Condensed"/>
+            </Grid>
+            <Image x:Name="Retroceso" Source="/Assets/retroceso.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Tapped="Retroceso_Tapped"/>
+        </StackPanel>
+        
     </Grid>
 </Page>

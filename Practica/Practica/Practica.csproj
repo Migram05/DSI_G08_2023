@@ -156,12 +156,16 @@
     <Content Include="Assets\Cuerda.png" />
     <Content Include="Assets\FondoMenu.png" />
     <Content Include="Assets\FondoTienda.jpg" />
+    <Content Include="Assets\fotoPerfil.png" />
     <Content Include="Assets\GameMusic.mp3" />
     <Content Include="Assets\Graves.jpg" />
     <Content Include="Assets\Mapa.jpg" />
     <Content Include="Assets\MonedaPirata.png" />
     <Content Include="Assets\multijugador.png" />
     <Content Include="Assets\mute.png" />
+    <Content Include="Assets\notificaciones.png" />
+    <Content Include="Assets\retroceso.png" />
+    <Content Include="Assets\silenciarNotificaciones.png" />
     <Content Include="Assets\TablaMadera.jpg" />
     <Content Include="Assets\unJugador.png" />
     <Content Include="Assets\VolverMenu.PNG" />
