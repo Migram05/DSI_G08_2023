@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\ajustes.png" />
+    <Content Include="Assets\anadir.png" />
     <Content Include="Assets\cofre.png" />
     <Content Include="Assets\Cuerda.png" />
     <Content Include="Assets\FondoMenu.png" />

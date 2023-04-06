@@ -7,8 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     <Grid>
+        <Rectangle Fill="DarkBlue" Margin="0,0,0,386" Stretch="Fill"/>
+        <Rectangle Fill="SaddleBrown" Margin="0,614,0,0" Stretch="Fill"/>
 
+        <Image Source="Assets/TablaMadera.jpg" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="193" Margin="600,807,600,0">
+            <Image.RenderTransform>
+                <CompositeTransform ScaleX="5"/>
+            </Image.RenderTransform>
+        </Image>
+        
+        <Button VerticalAlignment="Stretch" Margin="0,858,1365,0" HorizontalAlignment="Stretch" Click="Heroe_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Assets/hero.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Page>

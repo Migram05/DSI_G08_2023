@@ -53,6 +53,15 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <Button Grid.Column="1" VerticalAlignment="Stretch" Margin="71,779,351,149" HorizontalAlignment="Stretch" Click="TiendaGemas_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Assets/anadir.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Image Grid.Column="1" Source="Assets/MonedaPirata.png" Margin="154,774,284,145"/>
+        <TextBlock Grid.Column="1" Text="9999" Foreground="Gold" FontSize="40" SelectionChanged="TextBlock_SelectionChanged" Margin="222,788,185,165"/>
 
         <StackPanel Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,116,0,0">
             <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">

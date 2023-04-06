@@ -35,5 +35,10 @@ namespace Practica
             else
                 Frame.Navigate(typeof(MainPage));
         }
+
+        private void TiendaGemas_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TiendaGemas));
+        }
     }
 }

@@ -35,6 +35,7 @@
             <Button Content="Coop" Background="White" Foreground="Black" FontSize="50" HorizontalAlignment="Center" Margin="40"/>
         </StackPanel>
 
+        <Rectangle Fill="White" Margin="1083,718,310,174"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,718,298,0" >
             <Button Click="Heroe_Click" Height="107" Width="120" HorizontalAlignment="Center">
                 <Button.Template>
