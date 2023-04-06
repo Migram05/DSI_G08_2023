@@ -22,9 +22,57 @@ namespace Practica
     /// </summary>
     public sealed partial class Partida : Page
     {
+        public bool pause;
+
         public Partida()
         {
             this.InitializeComponent();
+            pause = false;
+        }
+
+        private void Heroe_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Ajustes_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Ajustes));
+        }
+
+        private void Pause_Click(object sender, RoutedEventArgs e)
+        {
+            pause = true;
+        }
+
+        private void E1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void E2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void E3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void E4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Continuar_Click(object sender, RoutedEventArgs e)
+        {
+            pause = false;
+        }
+
+        private void Salir_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }
