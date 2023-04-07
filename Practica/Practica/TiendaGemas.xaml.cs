@@ -26,5 +26,15 @@ namespace Practica
         {
             this.InitializeComponent();
         }
+
+        private void ReturnMenu_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
+
+        private void RetrunTienda_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
     }
 }

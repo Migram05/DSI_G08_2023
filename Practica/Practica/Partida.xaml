@@ -85,21 +85,21 @@
         <TextBlock FontSize="30" Text="100" Foreground="Black" Margin="1386,817,57,146"/>
         <Image Source="Assets/MonedaPirata.png" Margin="1350,819,119,146"/>
         <StackPanel Margin="135,823,881,138" Orientation="Horizontal">
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="P1_Click">
+            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="P2_Click">
+            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="P3_Click">
+            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>

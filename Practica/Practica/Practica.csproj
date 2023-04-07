@@ -171,6 +171,7 @@
     <Content Include="Assets\placeHolderBig.png" />
     <Content Include="Assets\placeHolderPeque.png" />
     <Content Include="Assets\retroceso.png" />
+    <Content Include="Assets\retrocesoConFondo.jpg" />
     <Content Include="Assets\silenciarNotificaciones.png" />
     <Content Include="Assets\TablaMadera.jpg" />
     <Content Include="Assets\unJugador.png" />
