@@ -32,10 +32,10 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="Practica.App">
       <uap:VisualElements
-        DisplayName="Practica"
+        DisplayName="Practica Final DSI"
         Square150x150Logo="Assets\Square150x150Logo.png"
-        Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Practica"
+        Square44x44Logo="Assets\Logo aplicación.png"
+        Description="Trabajo final para la asignatura de DSI 2022-2023. Desarrollada por Pablo Sánchez Martín y Miguel Ramírez Castrillo."
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

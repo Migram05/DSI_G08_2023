@@ -30,7 +30,8 @@ namespace Practica
 
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
-            if (Frame.CanGoBack)
+            Type previousPageType = this.Frame.BackStack.LastOrDefault()?.SourcePageType;
+            if (Frame.CanGoBack && !(previousPageType == typeof(TiendaGemas)))
                 Frame.GoBack();
             else
                 Frame.Navigate(typeof(MainPage));

@@ -29,12 +29,12 @@ namespace Practica
 
         private void ReturnMenu_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(MainPage));
         }
 
         private void RetrunTienda_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(Tienda));
         }
     }
 }
