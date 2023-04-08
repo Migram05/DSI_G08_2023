@@ -12,7 +12,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="Assets/woodTable.jpg"></ImageBrush>
         </Grid.Background>
-        <TextBlock Text="Multijugador" Foreground="Black" HorizontalAlignment="Center" FontSize="70" Margin="0,0,0,904"/>
+        <TextBlock Text="Multijugador" Foreground="Black" HorizontalAlignment="Center" FontSize="70" VerticalAlignment="Top"/>
 
         <Button Click="Ajustes_Click" Height="62" Width="78" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Button.Template>
@@ -31,25 +31,39 @@
         </Button>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 50">
-            <Button Content="Versus" Background="White" Foreground="Black" FontSize="50" HorizontalAlignment="Center"/>
-            <Button Content="Coop" Background="White" Foreground="Black" FontSize="50" HorizontalAlignment="Center" Margin="40"/>
+            <Button Content="Versus" Background="White" Foreground="Black" FontSize="50" HorizontalAlignment="Center" Click="Versus_Click"/>
+            <Button Content="Coop" Background="White" Foreground="Black" FontSize="50" HorizontalAlignment="Center" Margin="40" Click="Coop_Click"/>
         </StackPanel>
 
-        <Rectangle Fill="White" Margin="1083,718,310,174"/>
-        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,718,298,0" >
-            <Button Click="Heroe_Click" Height="107" Width="120" HorizontalAlignment="Center">
-                <Button.Template>
-                    <ControlTemplate>
-                        <Image Source="Assets/hero.png"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <TextBlock Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" Margin="20"/>
-        </StackPanel>
+        <GridView x:Name="DesplegableHeroe" ItemsSource="{x:Bind Images}" HorizontalAlignment="Right" Width="300" Visibility="Collapsed" Background="White" Margin="0,407,430,139">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid Orientation="Horizontal"
+                           MaximumRowsOrColumns="3"
+                           ItemWidth="130"
+                           ItemHeight="130"
+                           />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Image Source="{Binding}" Stretch="UniformToFill"/>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
 
-        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,696,90,0">
-            <Image Source="/Assets/cofre.png" Height="132" Width="169" HorizontalAlignment="Center"/>
-            <Button Content="Tienda" Background="Gold" Foreground="Black" FontSize="40" Click="Tienda_Click" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,70,90">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" >
+                <Image x:Name="ImagenHeroe" Source="/Assets/Graves.jpg" Grid.Column="2" Grid.Row="1" Stretch="Fill" Height="130" Width="130" VerticalAlignment="Bottom" Tapped="Heroe_Click"/>
+                <TextBlock Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" Margin="20"/>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image Source="/Assets/cofre.png" Height="132" Width="169" HorizontalAlignment="Center"/>
+                <Button Content="Tienda" Background="Gold" Foreground="Black" FontSize="40" Click="Tienda_Click" HorizontalAlignment="Center"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

@@ -8,105 +8,110 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
-        <Rectangle Fill="Blue" Margin="0,0,0,266"/>
-        <Rectangle Fill="SaddleBrown" Margin="0,734,0,0"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="371*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="87*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="Blue"/>
+        <Rectangle Grid.Row="1" Fill="SaddleBrown"/>
+        <Rectangle Grid.Row="2" Fill="SaddleBrown"/>
 
-        <Rectangle Fill="#B2FFFFFF" Margin="342,224,342,223" Visibility="{x:Bind pause}"/>
-        <TextBlock Text="Pausa" Foreground="Black" FontSize="80" Margin="649,224,637,663" Visibility="{x:Bind pause}"/>
-        <Button Background="White" HorizontalAlignment="Center" Margin="0,458,0,0" VerticalAlignment="Top" Height="67" Width="194" Content="Continuar" Foreground="Black" FontSize="40" Visibility="{x:Bind pause}" Click="Continuar_Click"/>
-        <Button Background="White" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Height="67" Width="194" Content="Salir" Foreground="Black" FontSize="40" Visibility="{x:Bind pause}" Click="Salir_Click"/>
-
-        <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="Ajustes_Click" Margin="0,0,1432,933">
-            <Button.Template>
-                <ControlTemplate>
-                    <Image Source="Assets/ajustes.png"/>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-        <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="Pause_Click" Margin="8,67,1439,873">
-            <Button.Template>
-                <ControlTemplate>
-                    <Image Source="Assets/pause.png"/>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-        <Image Source="Assets/TablaMadera.jpg" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="142" Margin="643,862,643,0">
-            <Image.RenderTransform>
-                <CompositeTransform ScaleX="7"/>
-            </Image.RenderTransform>
-        </Image>
-
-        <Button VerticalAlignment="Stretch" Margin="0,862,1365,0" HorizontalAlignment="Stretch" Click="Heroe_Click">
-            <Button.Template>
-                <ControlTemplate>
-                    <Image Source="Assets/hero.png"/>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-        <StackPanel Margin="135,862,-1,1" Orientation="Horizontal">
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E1_Click">
+        <Rectangle x:Name="pause" Fill="#B2FFFFFF" Margin="342,22,342,138" Visibility="Collapsed" Grid.Row="2"/>
+        <TextBlock x:Name="pauseText" Text="Pausa" Foreground="Black" FontSize="80" Margin="649,22,637,138" Visibility="Collapsed" Grid.Row="2"/>
+        <Button x:Name="pauseContinue" Background="White" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Height="67" Width="194" Content="Continuar" Foreground="Black" FontSize="40" Visibility="Collapsed" Click="Continuar_Click" Grid.Row="2"/>
+        <Button x:Name="pauseExit" Background="White" HorizontalAlignment="Center" Height="67" Width="194" Content="Salir" Foreground="Black" FontSize="40" Visibility="Collapsed" Click="Salir_Click" Grid.Row="2"/>
+        
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button HorizontalAlignment="Stretch" Click="Ajustes_Click" Height="60" Width="60">
                 <Button.Template>
                     <ControlTemplate>
-                        <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
+                        <Image Source="Assets/ajustes.png"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E2_Click">
+
+            <Button HorizontalAlignment="Stretch" Click="Pause_Click" Height="60" Width="60">
                 <Button.Template>
                     <ControlTemplate>
-                        <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E3_Click">
-                <Button.Template>
-                    <ControlTemplate>
-                        <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E4_Click">
-                <Button.Template>
-                    <ControlTemplate>
-                        <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
+                        <Image Source="Assets/pause.png"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
         </StackPanel>
 
-        <Image Source="Assets/TablaMadera.jpg" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="142" Margin="642,773,643,0">
-            <Image.RenderTransform>
-                <CompositeTransform ScaleX="7" ScaleY="0.3"/>
-            </Image.RenderTransform>
-        </Image>
-        <TextBlock FontSize="30" Text="100" Foreground="Black" Margin="1386,817,57,146"/>
-        <Image Source="Assets/MonedaPirata.png" Margin="1350,819,119,146"/>
-        <StackPanel Margin="135,823,881,138" Orientation="Horizontal">
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                <Button.Template>
-                    <ControlTemplate>
-                        <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                <Button.Template>
-                    <ControlTemplate>
-                        <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
-                <Button.Template>
-                    <ControlTemplate>
-                        <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Orientation="Horizontal" Height="40" Width="1280" Margin="100, 0, 0, 0">
+                <StackPanel Orientation="Horizontal">
+                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <TextBlock Margin="900, 0, 0, 0" FontSize="30" Text="100" Foreground="Black" />
+                <Image Source="Assets/MonedaPirata.png" Height="33" Width="91"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button HorizontalAlignment="Center" Click="Heroe_Click" Height="100" Width="100">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/hero.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Height="134" Margin="10, 0, 0, 0">
+                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E1_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E2_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E3_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E4_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
+
+
+       
 
     </Grid>
 </Page>

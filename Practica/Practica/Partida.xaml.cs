@@ -22,12 +22,10 @@ namespace Practica
     /// </summary>
     public sealed partial class Partida : Page
     {
-        public bool pause;
 
         public Partida()
         {
             this.InitializeComponent();
-            pause = false;
         }
 
         private void Heroe_Click(object sender, RoutedEventArgs e)
@@ -42,7 +40,20 @@ namespace Practica
 
         private void Pause_Click(object sender, RoutedEventArgs e)
         {
-            pause = true;
+            if(pause.Visibility == Visibility.Collapsed)
+            {
+                pause.Visibility = Visibility.Visible;
+                pauseContinue.Visibility = Visibility.Visible;
+                pauseExit.Visibility = Visibility.Visible;
+                pauseText.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                pause.Visibility = Visibility.Collapsed;
+                pauseContinue.Visibility = Visibility.Collapsed;
+                pauseExit.Visibility = Visibility.Collapsed;
+                pauseText.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void E1_Click(object sender, RoutedEventArgs e)
@@ -67,7 +78,10 @@ namespace Practica
 
         private void Continuar_Click(object sender, RoutedEventArgs e)
         {
-            pause = false;
+            pause.Visibility = Visibility.Collapsed;
+            pauseContinue.Visibility = Visibility.Collapsed;
+            pauseExit.Visibility = Visibility.Collapsed;
+            pauseText.Visibility = Visibility.Collapsed;
         }
 
         private void Salir_Click(object sender, RoutedEventArgs e)

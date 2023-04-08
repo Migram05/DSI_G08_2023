@@ -26,6 +26,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,116,0,0">
+            <TextBlock Grid.Row="1" Text="Héroes" FontSize="50" FontWeight="Bold" Foreground="Black" Height="61" Width="164"/>
             <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform ScaleX="0.85"/>
@@ -37,9 +38,9 @@
                 </Image.RenderTransform>
             </Image>
         </StackPanel>
-        <TextBlock Text="Héroes" FontSize="50" HorizontalAlignment="Center" Margin="0,116,0,812" FontWeight="Bold" Foreground="Black"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,116,0,0">
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Estructuras" FontSize="50" FontWeight="Bold" Foreground="Black" Height="63" Width="260"/>
             <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform ScaleX="0.85"/>
@@ -51,7 +52,6 @@
                 </Image.RenderTransform>
             </Image>
         </StackPanel >
-        <TextBlock Grid.Column="1" Text="Estructuras" FontSize="50" HorizontalAlignment="Center" Margin="0,116,0,812" FontWeight="Bold" Foreground="Black"/>
         <Button Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="100" Click="Menu_Click">
             <Button.Template>
                 <ControlTemplate>
@@ -59,7 +59,9 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+
         <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,116,0,0">
+            <TextBlock Text="Power Ups" FontSize="50" FontWeight="Bold" Foreground="Black" Height="61" Width="253"/>
             <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <CompositeTransform ScaleX="0.85"/>
@@ -72,7 +74,6 @@
             </Image>
         </StackPanel>
 
-        <TextBlock Grid.Column="2" Text="Power Ups" FontSize="50" HorizontalAlignment="Left" Margin="128,116,0,812" FontWeight="Bold" Foreground="Black"/>
 
 
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Top">
