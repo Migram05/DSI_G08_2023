@@ -25,6 +25,13 @@ namespace Practica
         public MainPage()
         {
             this.InitializeComponent();
+            var app = (App)Application.Current;
+            clickSound.Volume = app.getEffectVolume();
+        }
+        //Se ejecuta el sonido de click al pulsar en cualquier parte del Grid
+        private void Grid_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            clickSound.Play();
         }
 
         //Fucionalidad de los botones e imágenes interactivas

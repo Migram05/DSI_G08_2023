@@ -23,19 +23,32 @@ namespace Practica
     /// </summary>
     public sealed partial class Ajustes : Page
     {
+        //Variable que se asegura de que se han inizializado todos los objetos antes de ajustar el volumen de los efectos
+        private bool checkVol = false;
         public Ajustes()
         {
             this.InitializeComponent();
+            //Se ajusta el valor de volumen para el efecto de sonido de esta página
+            checkVol = true;
+            var app = (App)Application.Current;
+            clickSound.Volume = app.getEffectVolume();
+        }
+
+        //Se ejecuta el sonido de click al pulsar en cualquier parte del Grid
+        private void Grid_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            clickSound.Play();
         }
 
         //Navegación a páginas
         private void ImagenMenuPrincipal(object sender, TappedRoutedEventArgs e)
         {
-            //Regresa a la página de donde se entró a la tienda
-            if (Frame.CanGoBack)
-            {
+            //Regresa a la página de donde se entró a ajustes
+            Type previousPageType = this.Frame.BackStack.LastOrDefault()?.SourcePageType; //Se guarda el tipo de la página de procedencia
+            if (Frame.CanGoBack && !(previousPageType == typeof(AjustesSociales)))
                 Frame.GoBack();
-            }
+            else
+                Frame.Navigate(typeof(MainPage));
         }
 
         private void BotonAjustesSociales_Click(object sender, RoutedEventArgs e)
@@ -66,5 +79,25 @@ namespace Practica
             var app = (App)Application.Current;
             app.setVolume((float)MusicSlider.Value/100); //Llamada al método
         }
+        //Se mutean los efectos de sonido, click
+        private void MuteEffects_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var app = (App)Application.Current;
+            app.getEffect().Volume = 0;
+            EffectSlider.Value = 0;
+            clickSound.Volume = 0;
+        }
+
+        private void EffectSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            //Referencia a la aplicación
+            var app = (App)Application.Current;
+            app.getEffect().Volume = ((float)EffectSlider.Value / 100); //Se modifica el volumen
+            //Se ajusta el volumen del efecto para esta página
+            if(checkVol) clickSound.Volume = app.getEffectVolume();
+
+        }
+
+        
     }
 }

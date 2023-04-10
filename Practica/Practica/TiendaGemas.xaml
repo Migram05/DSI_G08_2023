@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid>
+    <Grid x:Name="rootGrid" PointerPressed="Grid_PointerPressed">
         <Grid.Background>
         <ImageBrush ImageSource="Assets/FondoTienda.jpg"></ImageBrush>
     </Grid.Background>
@@ -47,10 +47,10 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        
-        <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Top">
-         <Image  Source="Assets/MonedaPirata.png"/>
-         <TextBlock  Text="9999" Foreground="Gold" FontSize="40" />
+
+        <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" Margin="20"  HorizontalAlignment="Center" VerticalAlignment="Stretch">
+            <Image  Source="Assets/MonedaPirata.png"/>
+            <TextBlock  Text="9999" Foreground="Gold" FontSize="20" VerticalAlignment="Top" />
         </StackPanel>
 
 
@@ -58,5 +58,7 @@
             <Image x:Name="RetrunTienda" Source="Assets/retrocesoConFondo.jpg" Tapped="RetrunTienda_Tapped" Margin="20,0"/>
             <Image x:Name="ReturnMenu" Source="Assets/VolverMenu.PNG" Tapped="ReturnMenu_Tapped" Margin="20,0"/>
         </StackPanel>
+
+        <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>
     </Grid>
 </Page>

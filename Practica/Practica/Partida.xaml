@@ -7,33 +7,40 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid>
+    <Grid x:Name="rootGrid" PointerPressed="Grid_PointerPressed">
         <Grid.RowDefinitions>
-            <RowDefinition Height="371*"/>
-            <RowDefinition Height="42*"/>
-            <RowDefinition Height="87*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="3.5*"/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="Blue"/>
-        <Rectangle Grid.Row="1" Fill="SaddleBrown"/>
-        <Rectangle Grid.Row="2" Fill="SaddleBrown"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="Blue"/>
+        <Rectangle Grid.Row="2" Grid.ColumnSpan="3" Fill="#FFF9954D"/>
+        <Rectangle Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="SaddleBrown" Height="185" VerticalAlignment="Bottom"/>
 
-        <Rectangle x:Name="pause" Fill="#B2FFFFFF" Margin="342,22,342,138" Visibility="Collapsed" />
-        <TextBlock x:Name="pauseText" Text="Pausa" Foreground="Black" FontSize="80" Margin="649,22,637,138" Visibility="Collapsed"/>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="pauseContinue" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="67" Width="194" Content="Continuar" Foreground="Black" FontSize="40" Click="Continuar_Click" Visibility="Collapsed"/>
-            <Button x:Name="pauseExit" Background="White" Margin="0, 20, 0, 0" HorizontalAlignment="Center" Height="67" Width="194" Content="Salir" Foreground="Black" FontSize="40" Click="Salir_Click" Visibility="Collapsed"/>
+        <Rectangle x:Name="pause" Fill="#B2FFFFFF" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+        <StackPanel x:Name="pauseMenu"  Grid.Column="1" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Stretch" Visibility="Collapsed">
+            <TextBlock x:Name="pauseText" Text="PAUSA" FontFamily="Monotype Corsiva" Foreground="Black" FontSize="80" Grid.Column="1" Grid.Row="1"/>
+            <Button x:Name="pauseContinue" Background="White" Margin="0, 20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="67" Width="194" Content="CONTINUAR" Foreground="Black" FontSize="30" Click="Continuar_Click" />
+            <Button x:Name="pauseExit" Background="White" Margin="0, 20" HorizontalAlignment="Center" Height="67" Width="194" Content="SALIR" Foreground="Black" FontSize="40" Click="Salir_Click"/>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Button HorizontalAlignment="Stretch" Click="Ajustes_Click" Height="60" Width="60">
+
+        <StackPanel HorizontalAlignment="Left"  VerticalAlignment="Stretch" Orientation="Vertical">
+            <Button HorizontalAlignment="Stretch" Click="Ajustes_Click" Height="50" Width="50">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="Assets/ajustes.png"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-            <Button HorizontalAlignment="Stretch" Click="Pause_Click" Height="60" Width="60">
+            <Button HorizontalAlignment="Stretch" Click="Pause_Click" Height="30" Width="30">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="Assets/pause.png"/>
@@ -42,78 +49,24 @@
             </Button>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
-            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Orientation="Horizontal" Height="40" Width="1280" Margin="100, 0, 0, 0">
-                <StackPanel Orientation="Horizontal">
-                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button>
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="Assets/placeHolderPeque.png" Height="32" Width="80"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
-                <TextBlock Margin="900, 0, 0, 0" FontSize="30" Text="100" Foreground="Black" />
-                <Image Source="Assets/MonedaPirata.png" Height="33" Width="91"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <Button HorizontalAlignment="Center" Click="Heroe_Click" Height="100" Width="100">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="Assets/hero.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Height="134" Margin="10, 0, 0, 0">
-                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E1_Click">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E2_Click">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E3_Click">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="E4_Click">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="Assets/placeHolderBig.png" Height="134" Width="123"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
-            </StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+            <Image  Source="Assets/placeHolderPeque.png" Margin="10,0"/>
+            <Image  Source="Assets/placeHolderPeque.png" Margin="10,0"/>
+            <Image  Source="Assets/placeHolderPeque.png" Margin="10,0"/>
+            <Image  Source="Assets/placeHolderPeque.png" Margin="10,0"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Image Source="Assets/MonedaPirata.png"/>
+            <TextBlock FontSize="35" Text="100" Foreground="Black" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal">
+            <Image Source="Assets/hero.png" Tapped="Heroe_Click"/>
+            <Image Source="Assets/placeHolderBig.png"/>
+            <Image Source="Assets/placeHolderBig.png"/>
+            <Image Source="Assets/placeHolderBig.png"/>
+            <Image Source="Assets/placeHolderBig.png"/>
         </StackPanel>
 
-
-
-
+        <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>
     </Grid>
 </Page>

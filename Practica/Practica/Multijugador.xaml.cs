@@ -27,7 +27,7 @@ namespace Practica
         = new ObservableCollection<string>
           {
               "ms-appx:///Assets/Graves.jpg",
-              "ms-appx:///Assets/Graves.jpg",
+              "ms-appx:///Assets/gankplank.jpg",
               "ms-appx:///Assets/Graves.jpg",
               "ms-appx:///Assets/Graves.jpg",
               "ms-appx:///Assets/Graves.jpg",
@@ -36,8 +36,16 @@ namespace Practica
         public Multijugador()
         {
             this.InitializeComponent();
+            //Se ajusta el valor de volumen para el efecto de sonido de esta página
+            var app = (App)Application.Current;
+            clickSound.Volume = app.getEffectVolume();
         }
-
+        //Se ejecuta el sonido de click al pulsar en cualquier parte del Grid
+        private void Grid_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            clickSound.Play();
+        }
+        //Navegación
         private void Tienda_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Tienda));
@@ -64,11 +72,15 @@ namespace Practica
         {
             Frame.Navigate(typeof(Partida));
         }
-
-
         private void Versus_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Partida));
+        }
+
+        private void profileStats_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if(StatsImage.Visibility == Visibility.Collapsed) StatsImage.Visibility = Visibility.Visible;
+            else StatsImage.Visibility = Visibility.Collapsed;
         }
     }
 }

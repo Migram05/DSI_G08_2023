@@ -7,8 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
+    <Grid x:Name="rootGrid" PointerPressed="Grid_PointerPressed">
+        
+        
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/FondoMenu.png">
             </ImageBrush>
@@ -54,8 +55,8 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="/Assets/mute.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="56" Width="63" />
-                <Slider Grid.Column="1" HorizontalAlignment="Stretch" Width="auto" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Margin="10,0" Value="100">
+                <Image x:Name="MuteEffects" Source="/Assets/mute.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="56" Width="63" Tapped="MuteEffects_Tapped"/>
+                <Slider x:Name="EffectSlider" Grid.Column="1" HorizontalAlignment="Stretch" Width="auto" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Margin="10,0" Value="100" ValueChanged="EffectSlider_ValueChanged">
                     <Slider.RenderTransform>
                         <CompositeTransform ScaleY="2"/>
                     </Slider.RenderTransform>
@@ -70,5 +71,6 @@
             <Button x:Name="BotonAjustesSociales" Content="AJUSTES SOCIALES" HorizontalAlignment="Center" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="30" Background="#CCFFFFFF" Foreground="Black" Margin="10" Click="BotonAjustesSociales_Click"/>
         </StackPanel>
 
+        <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>
     </Grid>
 </Page>

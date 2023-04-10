@@ -8,7 +8,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid x:Name="rootGrid" PointerPressed="Grid_PointerPressed">
+        
         <Grid.Background>
             <ImageBrush ImageSource="Assets/FondoMenu.png"></ImageBrush>
         </Grid.Background>
@@ -32,17 +33,18 @@
             <TextBlock Text="NAVEGANDO NAVEGANDO TRIUNFÉ SAQUEANDO" FontSize="20" HorizontalTextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Bottom" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" HorizontalAlignment="Stretch"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-            <Image Source="/Assets/unJugador.png"  Height="203" Opacity="0.75" Tapped="ImagenUnJugador"/>
-            <Button Content="UN JUGADOR" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Click="BotonUnJugador"/>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical"  VerticalAlignment="Stretch">
+            <Image Source="/Assets/unJugador.png"  Height="203" Opacity="0.75" Tapped="ImagenUnJugador" HorizontalAlignment="Stretch"/>
+            <Button Content="UN JUGADOR" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Click="BotonUnJugador" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-            <Image Source="/Assets/multijugador.png" Height="203" Opacity="0.75" Tapped="ImagenMultijugador"/>
-            <Button Content="MULTIJUGADOR"  Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Click="BotonMultijugador"/>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical"  VerticalAlignment="Stretch">
+            <Image Source="/Assets/multijugador.png" Height="203" Opacity="0.75" Tapped="ImagenMultijugador" HorizontalAlignment="Stretch"/>
+            <Button Content="MULTIJUGADOR"  Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Click="BotonMultijugador" HorizontalAlignment="Center"/>
         </StackPanel>
         <Button Content="TIENDA" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Click="BotonTienda"/>
-        <Image Source="/Assets/cofre.png" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="203" Grid.Column ="1" Grid.Row="2" Tapped="ImagenTiendaPulsada"/>
+        <Image Source="/Assets/cofre.png" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="203" Grid.Column ="1" Grid.Row="2" Tapped="ImagenTiendaPulsada"/>
         <Image Source="/Assets/ajustes.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="0" Width="63" Grid.RowSpan="2" Tapped="ImagenAjustes"/>
 
+        <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>
     </Grid>
 </Page>

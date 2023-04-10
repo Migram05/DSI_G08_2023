@@ -31,13 +31,23 @@ namespace Practica
         /// ejecutado y, como tal, es el equivalente lógico de main() o WinMain().
         /// </summary>
         private MediaPlayer BackgroundMediaPlayer;
+        private MediaElement clickSound;
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            
-        }
 
+            // Crea el objeto MediaElement
+            clickSound = new MediaElement();
+
+            // Establece la fuente del sonido
+            clickSound.Source = new Uri("ms-appx:///Assets/clickSound.mp3");
+        }
+        public MediaElement getEffect() { return clickSound; }
+
+        public void setEffectVolume(int value) { clickSound.Volume = value; }
+
+        public double getEffectVolume() { return clickSound.Volume; }
         /// <summary>
         /// Se invoca cuando la aplicación la inicia normalmente el usuario final. Se usarán otros puntos
         /// de entrada cuando la aplicación se inicie para abrir un archivo específico, por ejemplo.

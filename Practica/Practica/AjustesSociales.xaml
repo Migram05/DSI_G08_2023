@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid x:Name="rootGrid" PointerPressed="Grid_PointerPressed">
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/FondoMenu.png">
             </ImageBrush>
@@ -50,6 +50,7 @@
             </Grid>
             <Image x:Name="Retroceso" Source="/Assets/retroceso.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Tapped="Retroceso_Tapped"/>
         </StackPanel>
-        
+
+        <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>
     </Grid>
 </Page>

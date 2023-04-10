@@ -26,6 +26,14 @@ namespace Practica
         public Tienda()
         {
             this.InitializeComponent();
+            //Se ajusta el valor de volumen para el efecto de sonido de esta página
+            var app = (App)Application.Current;
+            clickSound.Volume = app.getEffectVolume();
+        }
+        //Se ejecuta el sonido de click al pulsar en cualquier parte del Grid
+        private void Grid_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            clickSound.Play();
         }
 
         private void Menu_Click(object sender, RoutedEventArgs e)

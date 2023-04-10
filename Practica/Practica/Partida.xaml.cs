@@ -26,64 +26,46 @@ namespace Practica
         public Partida()
         {
             this.InitializeComponent();
+            //Se ajusta el valor de volumen para el efecto de sonido de esta página
+            var app = (App)Application.Current;
+            clickSound.Volume = app.getEffectVolume();
         }
-
+        //Se ejecuta el sonido de click al pulsar en cualquier parte del Grid
+        private void Grid_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            clickSound.Play();
+        }
         private void Heroe_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
+        //Navegación
         private void Ajustes_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Ajustes));
         }
 
+        //Cambia la visibilidad del menú de pausa
         private void Pause_Click(object sender, RoutedEventArgs e)
         {
             if(pause.Visibility == Visibility.Collapsed)
             {
                 pause.Visibility = Visibility.Visible;
-                pauseContinue.Visibility = Visibility.Visible;
-                pauseExit.Visibility = Visibility.Visible;
-                pauseText.Visibility = Visibility.Visible;
+                pauseMenu.Visibility = Visibility.Visible;
             }
             else
             {
                 pause.Visibility = Visibility.Collapsed;
-                pauseContinue.Visibility = Visibility.Collapsed;
-                pauseExit.Visibility = Visibility.Collapsed;
-                pauseText.Visibility = Visibility.Collapsed;
+                pauseMenu.Visibility = Visibility.Collapsed;
             }
-        }
-
-        private void E1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void E2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void E3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void E4_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void Continuar_Click(object sender, RoutedEventArgs e)
         {
             pause.Visibility = Visibility.Collapsed;
-            pauseContinue.Visibility = Visibility.Collapsed;
-            pauseExit.Visibility = Visibility.Collapsed;
-            pauseText.Visibility = Visibility.Collapsed;
+            pauseMenu.Visibility = Visibility.Collapsed;
         }
-
+        //Salir del juego
         private void Salir_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));

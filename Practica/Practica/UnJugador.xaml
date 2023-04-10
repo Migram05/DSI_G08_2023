@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid x:Name="rootGrid" PointerPressed="Grid_PointerPressed">
         <Grid.Background>
             <ImageBrush ImageSource="Assets/fondoUnJugador.jpg" Stretch="UniformToFill" />
         </Grid.Background>
@@ -34,10 +34,13 @@
             <Button x:Name="BotonInfinito" Content="INFINITO"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="0,30" Click="BotonInfinito_Click"/>
             <Button x:Name="BotonJugar" Content="JUGAR MISION"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Click="BotonJugar_Click"/>
         </StackPanel>
-        <Image x:Name="ImagenHeroe" Source="/Assets/Graves.jpg" Grid.Column="2" Grid.Row="1" Stretch="Fill" Height="130" Width="130" VerticalAlignment="Bottom" Tapped="ImagenHeroe_Tapped"/>
         
-        <GridView x:Name="DesplegableHeroe" ItemsSource="{x:Bind Images}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="300" Visibility="Collapsed" Background="White">
-            <GridView.ItemsPanel>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2">
+            <Image x:Name="ImagenHeroe" Source="/Assets/Graves.jpg"  Stretch="Fill" Height="130" Width="130" VerticalAlignment="Bottom" Tapped="ImagenHeroe_Tapped"/>
+            <TextBlock Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" FontFamily="Monotype Corsiva"/>
+        </StackPanel>
+        <GridView x:Name="DesplegableHeroe" ItemsSource="{x:Bind Images}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="300" Visibility="Collapsed" Background="White" IsItemClickEnabled="True" ItemClick="DesplegableHeroe_ItemClick">
+            <GridView.ItemsPanel >
                 <ItemsPanelTemplate>
                     <ItemsWrapGrid Orientation="Horizontal"
                            MaximumRowsOrColumns="3"
@@ -54,5 +57,6 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
+        <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>
     </Grid>
 </Page>
