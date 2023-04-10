@@ -17,11 +17,13 @@
         <Rectangle Grid.Row="1" Fill="SaddleBrown"/>
         <Rectangle Grid.Row="2" Fill="SaddleBrown"/>
 
-        <Rectangle x:Name="pause" Fill="#B2FFFFFF" Margin="342,22,342,138" Visibility="Collapsed" Grid.Row="2"/>
-        <TextBlock x:Name="pauseText" Text="Pausa" Foreground="Black" FontSize="80" Margin="649,22,637,138" Visibility="Collapsed" Grid.Row="2"/>
-        <Button x:Name="pauseContinue" Background="White" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Height="67" Width="194" Content="Continuar" Foreground="Black" FontSize="40" Visibility="Collapsed" Click="Continuar_Click" Grid.Row="2"/>
-        <Button x:Name="pauseExit" Background="White" HorizontalAlignment="Center" Height="67" Width="194" Content="Salir" Foreground="Black" FontSize="40" Visibility="Collapsed" Click="Salir_Click" Grid.Row="2"/>
-        
+        <Rectangle x:Name="pause" Fill="#B2FFFFFF" Margin="342,22,342,138" Visibility="Collapsed" />
+        <TextBlock x:Name="pauseText" Text="Pausa" Foreground="Black" FontSize="80" Margin="649,22,637,138" Visibility="Collapsed"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="pauseContinue" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="67" Width="194" Content="Continuar" Foreground="Black" FontSize="40" Click="Continuar_Click" Visibility="Collapsed"/>
+            <Button x:Name="pauseExit" Background="White" Margin="0, 20, 0, 0" HorizontalAlignment="Center" Height="67" Width="194" Content="Salir" Foreground="Black" FontSize="40" Click="Salir_Click" Visibility="Collapsed"/>
+        </StackPanel>
+
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
             <Button HorizontalAlignment="Stretch" Click="Ajustes_Click" Height="60" Width="60">
                 <Button.Template>
@@ -111,7 +113,7 @@
         </StackPanel>
 
 
-       
+
 
     </Grid>
 </Page>
