@@ -33,24 +33,24 @@
                 <StackPanel Orientation="Vertical" Margin="20,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="auto" Height="auto">
                     <TextBlock Text="500" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="#CCFFDD66"/>
                     <Image x:Name="Monedas" Source="Assets/monedas.PNG" Margin="20,0" Height="300"/>
-                    <Button Content="4.99 €" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" HorizontalAlignment="Center" />
+                    <Button Content="4.99 €" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" HorizontalAlignment="Center" Click="Button_Click"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="20,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="auto" Height="auto">
                     <TextBlock Text="1200" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="#CCFFDD66"/>
                     <Image x:Name="Bolsa" Source="Assets/bolsa.PNG" Margin="20,0" Height="300"/>
-                    <Button Content="9.99 €" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" HorizontalAlignment="Center" />
+                    <Button Content="9.99 €" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" HorizontalAlignment="Center" Click="Button_Click_1" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="20,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="auto" Height="auto">
                     <TextBlock Text="3000" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="#CCFFDD66"/>
                     <Image x:Name="Cofre" Source="Assets/tesoro.PNG" Margin="20,0"  Height="300" Width="290"/>
-                    <Button Content="19.99 €" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" HorizontalAlignment="Center" />
+                    <Button Content="19.99 €" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" HorizontalAlignment="Center" Click="Button_Click_2"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" Margin="20"  HorizontalAlignment="Center" VerticalAlignment="Stretch">
             <Image  Source="Assets/MonedaPirata.png"/>
-            <TextBlock  Text="9999" Foreground="Gold" FontSize="20" VerticalAlignment="Top" />
+            <TextBlock x:Name="coins" Text="9999" Foreground="Gold" FontSize="20" VerticalAlignment="Top" />
         </StackPanel>
 
 
@@ -58,7 +58,7 @@
             <Button x:Name="retornoTIenda"  IsTabStop="True" TabIndex="4" Click="retornoTIenda_Click">
                 <Button.Template>
                     <ControlTemplate>
-                        <Image x:Name="RetrunTienda" Source="Assets/retrocesoConFondo.jpg" Tapped="RetrunTienda_Tapped" Margin="20,0"/>
+                        <Image x:Name="RetrunTienda" Source="Assets/retrocesoConFondo.jpg" Margin="20,0"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
