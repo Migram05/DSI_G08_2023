@@ -43,5 +43,15 @@ namespace Practica
         {
             Frame.Navigate(typeof(Tienda));
         }
+
+        private void retornoTIenda_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Tienda));
+        }
+
+        private void retornoMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
     }
 }

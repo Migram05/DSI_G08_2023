@@ -24,13 +24,15 @@ namespace Practica
     /// </summary>
     public sealed partial class Partida : Page
     {
-
+        private int goldNumber;
         public Partida()
         {
             this.InitializeComponent();
             //Se ajusta el valor de volumen para el efecto de sonido de esta página
             var app = (App)Application.Current;
             clickSound.Volume = app.getEffectVolume();
+            goldNumber = 20;
+            goldNum.Text = goldNumber.ToString(); //Ajustamos el texto del contador de oro a una variable
         }
         //Se ejecuta el sonido de click al pulsar en cualquier parte del Grid
         private void Grid_PointerPressed(object sender, PointerRoutedEventArgs e)
@@ -39,7 +41,7 @@ namespace Practica
         }
         private void Heroe_Click(object sender, RoutedEventArgs e)
         {
-
+            goldNumber += 100;
         }
         //Navegación
         private void Ajustes_Click(object sender, RoutedEventArgs e)
@@ -82,6 +84,8 @@ namespace Practica
 
         private async void Canvas_Drop(object sender, DragEventArgs e)
         {
+            goldNumber -= 20;
+            goldNum.Text = goldNumber.ToString(); //Ajustamos el texto del contador de oro a una variable
             Image im = new Image();
             Point p = e.GetPosition(MiCanvas);
             var id = await e.DataView.GetTextAsync(); 
@@ -101,7 +105,20 @@ namespace Practica
 
         private void Canvas_DragOver(object sender, DragEventArgs e)
         {
-            e.AcceptedOperation = DataPackageOperation.Copy;
+            //Si no hay dinero suficiente para construir un barco, no permite copiar la estructura al mapa
+            if (goldNumber >= 20) e.AcceptedOperation = DataPackageOperation.Copy;
+            else e.AcceptedOperation = DataPackageOperation.None;
+        }
+
+        private void heroButton_Click(object sender, RoutedEventArgs e)
+        {
+            goldNumber += 100;
+            goldNum.Text = goldNumber.ToString(); //Ajustamos el texto del contador de oro a una variable
+        }
+
+        private void destroyPowerUp_Click(object sender, RoutedEventArgs e) //Power up que destruye todos los elementos en pantalla
+        {
+            MiCanvas.Children.Clear();
         }
     }
 }

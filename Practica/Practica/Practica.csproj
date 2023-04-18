@@ -153,10 +153,16 @@
   <ItemGroup>
     <Content Include="Assets\ajustes.png" />
     <Content Include="Assets\anadir.png" />
+    <Content Include="Assets\barco1.png" />
+    <Content Include="Assets\barco2.png" />
+    <Content Include="Assets\barril.jpg" />
     <Content Include="Assets\bolsa.png" />
+    <Content Include="Assets\cañon.jpg" />
     <Content Include="Assets\clickSound.mp3" />
     <Content Include="Assets\cofre.png" />
     <Content Include="Assets\Cuerda.png" />
+    <Content Include="Assets\disparo.jpg" />
+    <Content Include="Assets\espada.jpg" />
     <Content Include="Assets\estadisticas.jpg" />
     <Content Include="Assets\FondoMenu.png" />
     <Content Include="Assets\FondoTienda.jpg" />

@@ -51,31 +51,31 @@
         </StackPanel>
         <ContentControl VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3">
             <StackPanel  Orientation="Horizontal">
-                <Button IsTabStop="True" TabIndex="6">
+                <Button x:Name="destroyPowerUp"  IsTabStop="True" TabIndex="2" Click="destroyPowerUp_Click">
                     <Button.Template>
                         <ControlTemplate>
-                            <Image  Source="Assets/placeHolderPeque.png" Margin="10,0"/>
+                            <Image  Source="Assets/barril.jpg" Margin="10,0" />
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button IsTabStop="True" TabIndex="7">
+                <Button IsTabStop="True" TabIndex="3">
                     <Button.Template>
                         <ControlTemplate>
-                            <Image  Source="Assets/placeHolderPeque.png" Margin="10,0"/>
+                            <Image  Source="Assets/cañon.jpg" Margin="10,0"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button IsTabStop="True" TabIndex="8">
+                <Button IsTabStop="True" TabIndex="4">
                     <Button.Template>
                         <ControlTemplate>
-                            <Image  Source="Assets/placeHolderPeque.png" Margin="10,0"/>
+                            <Image  Source="Assets/disparo.jpg" Margin="10,0"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button IsTabStop="True" TabIndex="9">
+                <Button IsTabStop="True" TabIndex="5">
                     <Button.Template>
                         <ControlTemplate>
-                            <Image  Source="Assets/placeHolderPeque.png" Margin="10,0"/>
+                            <Image  Source="Assets/espada.jpg" Margin="10,0"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
@@ -84,15 +84,21 @@
         
         <StackPanel VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Orientation="Horizontal">
             <Image Source="Assets/MonedaPirata.png"/>
-            <TextBlock FontSize="35" Text="100" Foreground="Black" FontWeight="Bold"/>
+            <TextBlock x:Name="goldNum" FontSize="35" Text="100" Foreground="Black" FontWeight="Bold"/>
         </StackPanel>
 
         <StackPanel x:Name="MiStack" Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal">
-            <Image Source="Assets/hero.png" Tapped="Heroe_Click"/>
-            <Image x:Name="I2" Source="Assets/placeHolderBig.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
-            <Image x:Name="I3" Source="Assets/placeHolderBig.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
-            <Image x:Name="I4" Source="Assets/placeHolderBig.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
-            <Image x:Name="I5" Source="Assets/placeHolderBig.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
+            <Button x:Name="heroButton" IsTabStop="True" TabIndex="1" Click="heroButton_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Assets/hero.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Image x:Name="I2" Source="Assets/barco1.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
+            <Image x:Name="I3" Source="Assets/barco2.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
+            <Image x:Name="I4" Source="Assets/barco1.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
+            <Image x:Name="I5" Source="Assets/barco2.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
         </StackPanel>
 
         

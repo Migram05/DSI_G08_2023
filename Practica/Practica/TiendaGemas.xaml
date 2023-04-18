@@ -55,8 +55,21 @@
 
 
         <StackPanel Grid.Column="2" Grid.Row="3"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Image x:Name="RetrunTienda" Source="Assets/retrocesoConFondo.jpg" Tapped="RetrunTienda_Tapped" Margin="20,0"/>
-            <Image x:Name="ReturnMenu" Source="Assets/VolverMenu.PNG" Tapped="ReturnMenu_Tapped" Margin="20,0"/>
+            <Button x:Name="retornoTIenda"  IsTabStop="True" TabIndex="4" Click="retornoTIenda_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image x:Name="RetrunTienda" Source="Assets/retrocesoConFondo.jpg" Tapped="RetrunTienda_Tapped" Margin="20,0"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="retornoMenu"  IsTabStop="True" TabIndex="5" Click="retornoMenu_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image x:Name="ReturnMenu" Source="Assets/VolverMenu.PNG" Tapped="ReturnMenu_Tapped" Margin="20,0"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            
         </StackPanel>
 
         <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>
