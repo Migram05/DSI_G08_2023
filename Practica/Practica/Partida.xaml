@@ -20,7 +20,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="Blue"/>
+        <Canvas x:Name="MiCanvas" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="Blue" DragOver="Canvas_DragOver" AllowDrop="True" Drop="Canvas_Drop"/>
+        
         <Rectangle Grid.Row="2" Grid.ColumnSpan="3" Fill="#FFF9954D"/>
         <Rectangle Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="SaddleBrown" Height="185" VerticalAlignment="Bottom"/>
 
@@ -59,12 +60,12 @@
             <Image Source="Assets/MonedaPirata.png"/>
             <TextBlock FontSize="35" Text="100" Foreground="Black" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal">
+        <StackPanel x:Name="MiStack" Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal">
             <Image Source="Assets/hero.png" Tapped="Heroe_Click"/>
-            <Image Source="Assets/placeHolderBig.png"/>
-            <Image Source="Assets/placeHolderBig.png"/>
-            <Image Source="Assets/placeHolderBig.png"/>
-            <Image Source="Assets/placeHolderBig.png"/>
+            <Image x:Name="I2" Source="Assets/placeHolderBig.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
+            <Image x:Name="I3" Source="Assets/placeHolderBig.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
+            <Image x:Name="I4" Source="Assets/placeHolderBig.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
+            <Image x:Name="I5" Source="Assets/placeHolderBig.png" CanDrag ="True" DragStarting="Image_DragStarting"/>
         </StackPanel>
 
         <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>

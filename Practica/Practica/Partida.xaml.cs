@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -69,6 +71,37 @@ namespace Practica
         private void Salir_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
+        }
+
+        private void Image_DragStarting(UIElement sender, DragStartingEventArgs args)
+        {
+            Image Item = sender as Image;
+            args.Data.SetText(Item.Name.ToString()); 
+            args.Data.RequestedOperation = DataPackageOperation.Copy;
+        }
+
+        private async void Canvas_Drop(object sender, DragEventArgs e)
+        {
+            Image im = new Image();
+            Point p = e.GetPosition(MiCanvas);
+            var id = await e.DataView.GetTextAsync(); 
+            Image O = FindName(id.ToString()) as Image;
+            if (O.Parent == MiStack)
+            {
+                im.Source = O.Source;
+                MiCanvas.Children.Add(im);
+                im.CanDrag = false;
+            }
+
+            //Y finalmente poner la posición que quieras
+            im.SetValue(Canvas.TopProperty, p.Y - 60.0f);
+            im.SetValue(Canvas.LeftProperty, p.X - 60.0f);
+            im.SetValue(Canvas.WidthProperty, 100); //salen muy grandes asi que reducimos su tamaño
+        }
+
+        private void Canvas_DragOver(object sender, DragEventArgs e)
+        {
+            e.AcceptedOperation = DataPackageOperation.Copy;
         }
     }
 }
