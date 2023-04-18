@@ -25,8 +25,13 @@
             <RowDefinition Height="6*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-
-        <Image Source="/Assets/VolverMenuSinFondo.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="0" Width="63" Grid.RowSpan="2" Tapped="ImagenMenuPrincipal"/>
+        <Button x:Name="menuPrincipal" VerticalAlignment="Top" HorizontalAlignment="Left"  Grid.RowSpan="2" IsTabStop="True" TabIndex="3" Click="menuPrincipal_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/Assets/VolverMenuSinFondo.png" Height="119" Width="63" Tapped="ImagenMenuPrincipal"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <Image Source="Assets/Cuerda.png" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Image Source="Assets/Cuerda.png" Grid.RowSpan="2" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
@@ -43,12 +48,18 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Image x:Name="FotoPerfil" Source="/Assets/fotoPerfil.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.RowSpan="2"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="70" TextWrapping="Wrap" Text="NOMBRE" TextAlignment="Start" VerticalAlignment="Center" Margin="10,0"/>
+                <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="70" TextWrapping="Wrap" Text="NOMBRE" TextAlignment="Start" VerticalAlignment="Center" Margin="10,0"  IsTabStop="True" TabIndex="1"/>
                 <Image x:Name="Silenciar" Source="/Assets/silenciarNotificaciones.png" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="2" Grid.RowSpan="2" Tapped="Silenciar_Tapped"/>
                 <Image x:Name="Notificaciones" Source="/Assets/notificaciones.png" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="2" Grid.RowSpan="2" Visibility="Collapsed" Tapped="Notificaciones_Tapped"/>
                 <TextBlock Text="ONLINE" FontSize="20" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Height="Auto" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Stretch" Width="auto" Foreground="#FF3FFF0B" FontFamily="Bernard MT Condensed"/>
             </Grid>
-            <Image x:Name="Retroceso" Source="/Assets/retroceso.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Tapped="Retroceso_Tapped"/>
+            <Button x:Name="retrocesoButton" VerticalAlignment="Center" HorizontalAlignment="Center"  IsTabStop="True" TabIndex="2" Click="retrocesoButton_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image x:Name="Retroceso" Source="/Assets/retroceso.png"  Height="50" Tapped="Retroceso_Tapped"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
 
         <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>

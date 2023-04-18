@@ -90,5 +90,23 @@ namespace Practica
         {
             
         }
+
+        private void ajustesButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Ajustes));
+        }
+
+        private void botonHeroe_Click(object sender, RoutedEventArgs e)
+        {
+            //Ajusta la visibilidad del desplegables de héroes
+            Visibility estado = DesplegableHeroe.Visibility;
+            if (estado == Visibility.Visible) DesplegableHeroe.Visibility = Visibility.Collapsed;
+            else DesplegableHeroe.Visibility = Visibility.Visible;
+        }
+
+        private void retornoMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
     }
 }

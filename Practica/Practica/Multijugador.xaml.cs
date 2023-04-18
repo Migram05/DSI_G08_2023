@@ -82,5 +82,23 @@ namespace Practica
             if(StatsImage.Visibility == Visibility.Collapsed) StatsImage.Visibility = Visibility.Visible;
             else StatsImage.Visibility = Visibility.Collapsed;
         }
+
+        private void ajustes_Click_1(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Ajustes));
+        }
+
+        private void stats_Click(object sender, RoutedEventArgs e)
+        {
+            if (StatsImage.Visibility == Visibility.Collapsed) StatsImage.Visibility = Visibility.Visible;
+            else StatsImage.Visibility = Visibility.Collapsed;
+        }
+
+        private void botonHeroe_Click(object sender, RoutedEventArgs e)
+        {
+            Visibility estado = DesplegableHeroe.Visibility;
+            if (estado == Visibility.Visible) DesplegableHeroe.Visibility = Visibility.Collapsed;
+            else DesplegableHeroe.Visibility = Visibility.Visible;
+        }
     }
 }

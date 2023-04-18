@@ -55,5 +55,15 @@ namespace Practica
         {
             Frame.Navigate(typeof(Ajustes));
         }
+
+        private void menuPrincipal_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void retrocesoButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Ajustes));
+        }
     }
 }

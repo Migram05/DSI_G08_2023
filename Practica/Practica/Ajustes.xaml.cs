@@ -98,6 +98,30 @@ namespace Practica
 
         }
 
-        
+        private void muteMusica_Click(object sender, RoutedEventArgs e)
+        {
+            //Referencia a la aplicación
+            var app = (App)Application.Current;
+            app.setVolume(0); //Llamada al método
+            MusicSlider.Value = 0;
+        }
+
+        private void muteEffects_Click(object sender, RoutedEventArgs e)
+        {
+            var app = (App)Application.Current;
+            app.getEffect().Volume = 0;
+            EffectSlider.Value = 0;
+            clickSound.Volume = 0;
+        }
+
+        private void menuPrincipal_Click(object sender, RoutedEventArgs e)
+        {
+            //Regresa a la página de donde se entró a ajustes
+            Type previousPageType = this.Frame.BackStack.LastOrDefault()?.SourcePageType; //Se guarda el tipo de la página de procedencia
+            if (Frame.CanGoBack && !(previousPageType == typeof(AjustesSociales)))
+                Frame.GoBack();
+            else
+                Frame.Navigate(typeof(MainPage));
+        }
     }
 }

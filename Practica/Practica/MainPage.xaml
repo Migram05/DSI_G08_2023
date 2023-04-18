@@ -43,8 +43,13 @@
         </StackPanel>
         <Button Content="TIENDA" VerticalAlignment="Top" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="60" Background="#CCFFDD66" Foreground="Black" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Click="BotonTienda"/>
         <Image Source="/Assets/cofre.png" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="203" Grid.Column ="1" Grid.Row="2" Tapped="ImagenTiendaPulsada"/>
-        <Image Source="/Assets/ajustes.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="0" Width="63" Grid.RowSpan="2" Tapped="ImagenAjustes"/>
-
+        <Button x:Name="ajustes" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.RowSpan="2" IsTabStop="True" TabIndex="4"  Click="ajustes_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Assets/ajustes.png" Height="119" Width="63" Tapped="ImagenAjustes"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>
     </Grid>
 </Page>

@@ -24,21 +24,42 @@
             <RowDefinition Height="7*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="Ajustes" Source="/Assets/ajustes.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="0" Width="63" Tapped="Ajustes_Tapped"/>
-        <Image x:Name="RetornoMenu" Source="/Assets/VolverMenuSinFondo.png" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="119" Grid.Column ="0" Grid.Row="2" Width="63" Tapped="RetornoMenu_Tapped"/>
+        <Button x:Name="ajustesButton" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.RowSpan="2" IsTabStop="True" TabIndex="5"  Click="ajustesButton_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image x:Name="Ajustes" Source="/Assets/ajustes.png" Height="119" Width="63" Tapped="Ajustes_Tapped"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="retornoMenuButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column ="0" Grid.Row="2" IsTabStop="True" TabIndex="6" Click="retornoMenuButton_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image x:Name="RetornoMenu" Source="/Assets/VolverMenuSinFondo.png"  Height="119"  Width="63" Tapped="RetornoMenu_Tapped"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        
         <Image x:Name="Mapa" Source="/Assets/Mapa.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Grid.Column ="1" Grid.Row="1"/>
         <TextBlock Text="UN JUGADOR" FontWeight="Black" FontSize="80" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
         <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" Margin="0, 20">
             <Image x:Name="ImagenTienda" Source="/Assets/cofre.png" HorizontalAlignment="Right" Height="180" Tapped="ImagenTienda_Tapped"/>
-            <Button x:Name="BotonTienda" Content="TIENDA"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFDD66" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="60,0,0,0" Click="BotonTienda_Click"/>
-            <Button x:Name="BotonInfinito" Content="INFINITO"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="0,30" Click="BotonInfinito_Click"/>
-            <Button x:Name="BotonJugar" Content="JUGAR MISION"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Click="BotonJugar_Click"/>
+            <Button x:Name="BotonTienda" Content="TIENDA"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFDD66" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="60,0,0,0" IsTabStop="True" TabIndex="1" Click="BotonTienda_Click"/>
+            <Button x:Name="BotonInfinito" Content="INFINITO"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="0,30" IsTabStop="True" TabIndex="2" Click="BotonInfinito_Click"/>
+            <Button x:Name="BotonJugar" Content="JUGAR MISION"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" IsTabStop="True" TabIndex="3" Click="BotonJugar_Click"/>
         </StackPanel>
-        
-        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2">
-            <Image x:Name="ImagenHeroe" Source="/Assets/Graves.jpg"  Stretch="Fill" Height="130" Width="130" VerticalAlignment="Bottom" Tapped="ImagenHeroe_Tapped"/>
-            <TextBlock Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" FontFamily="Monotype Corsiva"/>
-        </StackPanel>
+
+        <ContentControl VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" IsTabStop="False">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2">
+                <Button x:Name="botonHeroe" VerticalAlignment="Bottom"  IsTabStop="True" TabIndex="4"  Click="botonHeroe_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image x:Name="ImagenHeroe" Source="/Assets/Graves.jpg"  Stretch="Fill" Height="130" Width="130" VerticalAlignment="Bottom" Tapped="ImagenHeroe_Tapped"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <TextBlock Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" FontFamily="Monotype Corsiva"/>
+            </StackPanel>
+        </ContentControl>
         <GridView x:Name="DesplegableHeroe" ItemsSource="{x:Bind Images}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="300" Visibility="Collapsed" Background="White" IsItemClickEnabled="True" ItemClick="DesplegableHeroe_ItemClick">
             <GridView.ItemsPanel >
                 <ItemsPanelTemplate>

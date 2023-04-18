@@ -65,5 +65,10 @@ namespace Practica
         {
             Frame.Navigate(typeof(UnJugador));
         }
+
+        private void ajustes_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Ajustes));
+        }
     }
 }

@@ -28,11 +28,24 @@
         <TextBlock Text="MULTIJUGADOR" FontWeight="Black" FontSize="80" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-            <Image Source="Assets/ajustes.PNG" Height="40" Tapped="Ajustes_Click"/>
-            <Image x:Name="profileStats" Source="Assets/profile.png" Height="40" Tapped="profileStats_Tapped"/>
+            <Button x:Name="ajustes"  IsTabStop="True" TabIndex="4" Click="ajustes_Click_1">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Assets/ajustes.PNG" Height="40" Tapped="Ajustes_Click"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="stats"  IsTabStop="True" TabIndex="5" Click="stats_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image x:Name="profileStats" Source="Assets/profile.png" Height="40" Tapped="profileStats_Tapped"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            
         </StackPanel>
         
-        <Button VerticalAlignment="Bottom" Click="Menu_Click" Height="61" Width="78" Grid.Row="2">
+        <Button VerticalAlignment="Bottom" Click="Menu_Click" Height="61" Width="78" Grid.Row="2" TabIndex="6">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="Assets/VolverMenu.PNG"/>
@@ -41,8 +54,8 @@
         </Button>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Grid.Row="1" Grid.Column="1">
-            <Button Content="Versus" Background="White" Foreground="Black" FontSize="50" HorizontalAlignment="Center" Click="Versus_Click"/>
-            <Button Content="Coop" Background="White" Foreground="Black" FontSize="50" HorizontalAlignment="Center" Margin="40" Click="Coop_Click"/>
+            <Button Content="Versus" Background="White" Foreground="Black" FontSize="50" HorizontalAlignment="Center" Click="Versus_Click" TabIndex="1"/>
+            <Button Content="Coop" Background="White" Foreground="Black" FontSize="50" HorizontalAlignment="Center" Margin="40" Click="Coop_Click" TabIndex="2"/>
         </StackPanel>
 
         <GridView x:Name="DesplegableHeroe" ItemsSource="{x:Bind Images}" HorizontalAlignment="Right" Width="300" Visibility="Collapsed" Background="White" Grid.Column="1" Grid.Row="1">
@@ -64,14 +77,21 @@
             </GridView.ItemTemplate>
         </GridView>
 
-        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2">
-            <Image x:Name="ImagenHeroe" Source="/Assets/Graves.jpg" Grid.Column="2" Grid.Row="1" Stretch="Fill" Height="130" Width="130" VerticalAlignment="Stretch" Tapped="Heroe_Click"/>
-            <TextBlock Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" FontFamily="Monotype Corsiva"/>
-        </StackPanel>
-
+        <ContentControl VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" IsTabStop="False">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2">
+                <Button x:Name="botonHeroe" VerticalAlignment="Bottom"  IsTabStop="True" TabIndex="4"  Click="botonHeroe_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image x:Name="ImagenHeroe" Source="/Assets/Graves.jpg" Stretch="Fill" Height="130" Width="130" VerticalAlignment="Stretch" Tapped="Heroe_Click"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <TextBlock Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" FontFamily="Monotype Corsiva"/>
+            </StackPanel>
+        </ContentControl>
         <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" Margin="0, 20">
             <Image x:Name="ImagenTienda" Source="/Assets/cofre.png" HorizontalAlignment="Right" Height="180" Tapped="Tienda_Click"/>
-            <Button x:Name="BotonTienda" Content="TIENDA"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFDD66" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="60,0,0,0" Click="Tienda_Click"/>
+            <Button x:Name="BotonTienda" Content="TIENDA"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFDD66" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="60,0,0,0" TabIndex="3" Click="Tienda_Click"/>
         </StackPanel>
         <Image x:Name="StatsImage"  Source="Assets/estadisticas.jpg" Grid.RowSpan="3" Grid.Column="2" Grid.ColumnSpan="2" Stretch="Fill" Visibility="Collapsed"/>
         <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>
