@@ -164,6 +164,7 @@
     <Content Include="Assets\disparo.jpg" />
     <Content Include="Assets\espada.jpg" />
     <Content Include="Assets\estadisticas.jpg" />
+    <Content Include="Assets\explosion.mp3" />
     <Content Include="Assets\FondoMenu.png" />
     <Content Include="Assets\FondoTienda.jpg" />
     <Content Include="Assets\fondoUnJugador.jpg" />
@@ -193,6 +194,7 @@
     <Content Include="Assets\Logo aplicación.targetsize-32.png" />
     <Content Include="Assets\Logo aplicación.targetsize-48.png" />
     <Content Include="Assets\Mapa.jpg" />
+    <Content Include="Assets\mar.jpg" />
     <Content Include="Assets\MonedaPirata.png" />
     <Content Include="Assets\monedas.png" />
     <Content Include="Assets\multijugador.png" />
@@ -201,6 +203,7 @@
     <Content Include="Assets\pause.png" />
     <Content Include="Assets\placeHolderBig.png" />
     <Content Include="Assets\placeHolderPeque.png" />
+    <Content Include="Assets\playa.jpg" />
     <Content Include="Assets\profile.png" />
     <Content Include="Assets\retroceso.png" />
     <Content Include="Assets\retrocesoConFondo.jpg" />

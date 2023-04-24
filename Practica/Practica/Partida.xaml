@@ -20,9 +20,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Canvas x:Name="MiCanvas" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="Blue" DragOver="Canvas_DragOver" AllowDrop="True" Drop="Canvas_Drop"/>
+
+        <Canvas x:Name="MiCanvas" Grid.ColumnSpan="3" Grid.RowSpan="2" DragOver="Canvas_DragOver" AllowDrop="True" Drop="Canvas_Drop" >
+            <Canvas.Background>
+                <ImageBrush ImageSource="Assets/mar.jpg"/>
+            </Canvas.Background>
+        </Canvas>
+        <Image Grid.Row="2" Grid.ColumnSpan="3" Source="Assets/playa.jpg" Stretch="Fill"/>
         
-        <Rectangle Grid.Row="2" Grid.ColumnSpan="3" Fill="#FFF9954D"/>
         <Rectangle Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="SaddleBrown" Height="185" VerticalAlignment="Bottom"/>
 
         <Rectangle x:Name="pause" Fill="#B2FFFFFF" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
