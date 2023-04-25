@@ -40,12 +40,12 @@
         </Button>
         
         <Image x:Name="Mapa" Source="/Assets/Mapa.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Grid.Column ="1" Grid.Row="1"/>
-        <TextBlock Text="UN JUGADOR" FontWeight="Black" FontSize="80" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
+        <TextBlock x:Uid="TextoUnJugador" Text="UN JUGADOR" FontWeight="Black" FontSize="80" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
         <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" Margin="0, 20">
             <Image x:Name="ImagenTienda" Source="/Assets/cofre.png" HorizontalAlignment="Right" Height="180" Tapped="ImagenTienda_Tapped"/>
-            <Button x:Name="BotonTienda" Content="TIENDA"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFDD66" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="60,0,0,0" IsTabStop="True" TabIndex="1" Click="BotonTienda_Click"/>
-            <Button x:Name="BotonInfinito" Content="INFINITO"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="0,30" IsTabStop="True" TabIndex="2" Click="BotonInfinito_Click"/>
-            <Button x:Name="BotonJugar" Content="JUGAR MISION"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" IsTabStop="True" TabIndex="3" Click="BotonJugar_Click"/>
+            <Button x:Uid="Tienda" x:Name="BotonTienda" Content="TIENDA"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFDD66" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="60,0,0,0" IsTabStop="True" TabIndex="1" Click="BotonTienda_Click"/>
+            <Button x:Uid="Infinito" x:Name="BotonInfinito" Content="INFINITO"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="0,30" IsTabStop="True" TabIndex="2" Click="BotonInfinito_Click"/>
+            <Button x:Uid="Jugar" x:Name="BotonJugar" Content="JUGAR MISION"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFFFFF" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" IsTabStop="True" TabIndex="3" Click="BotonJugar_Click"/>
         </StackPanel>
 
         <ContentControl VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" IsTabStop="False">
@@ -57,7 +57,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <TextBlock Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" FontFamily="Monotype Corsiva"/>
+                <TextBlock x:Uid="Heroes" Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" FontFamily="Monotype Corsiva"/>
             </StackPanel>
         </ContentControl>
         <GridView x:Name="DesplegableHeroe" ItemsSource="{x:Bind Images}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="300" Visibility="Collapsed" Background="White" IsItemClickEnabled="True" ItemClick="DesplegableHeroe_ItemClick">

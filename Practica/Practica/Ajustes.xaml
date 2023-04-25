@@ -40,8 +40,8 @@
         <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Image Source="Assets/TablaMadera.jpg" Stretch="Fill" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
         <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Margin="40" VerticalAlignment="Stretch">
-            <TextBlock Text="AJUSTES" FontSize="80" FontWeight="Black" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
-            <TextBlock Text="MUSICA" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+            <TextBlock x:Uid="Ajustes" Text="AJUSTES" FontSize="80" FontWeight="Black" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+            <TextBlock x:Uid="Musica" Text="MUSICA" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -62,7 +62,7 @@
                 </Slider>
             </Grid>
 
-            <TextBlock Text="EFECTOS" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch" />
+            <TextBlock x:Uid="Efectos" Text="EFECTOS" FontSize="60" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -88,7 +88,7 @@
                 <ComboBoxItem Content="English" Tag="en-US" />
                 <ComboBoxItem Content="Français" Tag="fr-FR" />
             </ComboBox>
-            <Button x:Name="BotonAjustesSociales" Content="AJUSTES SOCIALES" HorizontalAlignment="Center" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="30" Background="#CCFFFFFF" Foreground="Black" Margin="10"  IsTabStop="True" TabIndex="6" Click="BotonAjustesSociales_Click"/>
+            <Button x:Uid="AjustesSociales" x:Name="BotonAjustesSociales" Content="AJUSTES SOCIALES" HorizontalAlignment="Center" Height="68" Width="338" FontFamily="Monotype Corsiva" FontSize="30" Background="#CCFFFFFF" Foreground="Black" Margin="10"  IsTabStop="True" TabIndex="6" Click="BotonAjustesSociales_Click"/>
         </StackPanel>
 
         <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>

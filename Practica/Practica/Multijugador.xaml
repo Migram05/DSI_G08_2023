@@ -25,7 +25,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="MULTIJUGADOR" FontWeight="Black" FontSize="80" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
+        <TextBlock x:Uid="Multijugador" Text="MULTIJUGADOR" FontWeight="Black" FontSize="80" TextWrapping="Wrap" Height="Auto" TextAlignment="Center" FontFamily="Monotype Corsiva" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
             <Button x:Name="ajustes"  IsTabStop="True" TabIndex="4" Click="ajustes_Click_1">
@@ -86,12 +86,12 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <TextBlock Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" FontFamily="Monotype Corsiva"/>
+                <TextBlock x:Uid="Heroes" Text="HÉROE" HorizontalAlignment="Center" Foreground="Black" FontSize="30" FontFamily="Monotype Corsiva"/>
             </StackPanel>
         </ContentControl>
         <StackPanel Grid.Column="3" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" Margin="0, 20">
             <Image x:Name="ImagenTienda" Source="/Assets/cofre.png" HorizontalAlignment="Right" Height="180" Tapped="Tienda_Click"/>
-            <Button x:Name="BotonTienda" Content="TIENDA"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFDD66" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="60,0,0,0" TabIndex="3" Click="Tienda_Click"/>
+            <Button x:Uid="Tienda" x:Name="BotonTienda" Content="TIENDA"  FontFamily="Monotype Corsiva" FontSize="40" Background="#CCFFDD66" Foreground="Black" Width="auto" HorizontalAlignment="Stretch" Margin="60,0,0,0" TabIndex="3" Click="Tienda_Click"/>
         </StackPanel>
         <Image x:Name="StatsImage"  Source="Assets/estadisticas.jpg" Grid.RowSpan="3" Grid.Column="2" Grid.ColumnSpan="2" Stretch="Fill" Visibility="Collapsed"/>
         <MediaElement x:Name="clickSound" AutoPlay="False" Source="/Assets/clickSound.mp3"/>

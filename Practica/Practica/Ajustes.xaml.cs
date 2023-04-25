@@ -63,6 +63,7 @@ namespace Practica
 
             // Cambiar el idioma de la aplicación a través del objeto ApplicationLanguages
             ApplicationLanguages.PrimaryLanguageOverride = selectedLanguage;
+            //Frame.Navigate(this.GetType());
         }
         //Muteo del sonido
         private void MusicMuteImage_Tapped(object sender, TappedRoutedEventArgs e)

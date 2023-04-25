@@ -8,6 +8,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Globalization;
 using Windows.Media.Core;
 using Windows.Media.Playback;
 using Windows.Storage;
@@ -110,6 +111,8 @@ namespace Practica
                 // Asegurarse de que la ventana actual está activa.
                 Window.Current.Activate();
             }
+
+            ApplicationLanguages.PrimaryLanguageOverride = "es-ES";
         }
 
         /// <summary>

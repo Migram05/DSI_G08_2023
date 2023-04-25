@@ -58,12 +58,12 @@
         </StackPanel>
         
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50">
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="ESTRUCTURAS" FontFamily="Monotype Corsiva" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="Black" Height="63" Width="260"/>
+            <TextBlock x:Uid="Estructuras" Grid.Row="1" Grid.Column="1" Text="ESTRUCTURAS" FontFamily="Monotype Corsiva" TextAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="Black" Height="63" Width="260"/>
             <ContentControl HorizontalAlignment="Center" IsTabStop="True" TabIndex="3" UseSystemFocusVisuals="True">
                 <StackPanel Orientation="Horizontal" Background="White" HorizontalAlignment="Stretch" Height="150" Margin="50,0" Tapped="ImagenEstructura_Tapped">
                     <Image x:Name="ImagenEstructura" Source="/Assets/barco2.png"  Stretch="Fill" Height="130" Width="130" VerticalAlignment="Center"/>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="40,10">
-                        <TextBlock Text="TORRE 1" FontFamily="Monotype Corsiva" FontSize="30" TextAlignment="Center" Foreground="Black"/>
+                        <TextBlock x:Uid="Torre" Text="TORRE 1" FontFamily="Monotype Corsiva" FontSize="30" TextAlignment="Center" Foreground="Black"/>
                         <StackPanel Orientation="Horizontal" Margin="0,20">
                             <Image  Source="Assets/MonedaPirata.png" Height="50"/>
                             <TextBlock  Text="500" Foreground="Gold" FontSize="20" VerticalAlignment="Top" />
@@ -80,7 +80,7 @@
                 <StackPanel Orientation="Horizontal" Background="White" HorizontalAlignment="Stretch" Height="150" Margin="50,0" Tapped="ImagenPowerUp_Tapped">
                     <Image x:Name="ImagenPowerUp" Source="/Assets/espada.jpg"  Stretch="Fill" Height="130" Width="130" VerticalAlignment="Center"/>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="40,10">
-                        <TextBlock Text="PODER 1" FontFamily="Monotype Corsiva" FontSize="30" TextAlignment="Center" Foreground="Black"/>
+                        <TextBlock x:Uid="Poder" Text="PODER 1" FontFamily="Monotype Corsiva" FontSize="30" TextAlignment="Center" Foreground="Black"/>
                         <StackPanel Orientation="Horizontal" Margin="0,20">
                             <Image  Source="Assets/MonedaPirata.png" Height="50"/>
                             <TextBlock  Text="750" Foreground="Gold" FontSize="20" VerticalAlignment="Top" />
